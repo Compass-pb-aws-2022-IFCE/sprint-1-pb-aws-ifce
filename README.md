@@ -1,20 +1,37 @@
-# Avaliação Sprint 1 - Programa de Bolsas Compass.uol / AWS e IFCE
-Avaliação da primeira sprint do programa de bolsas Compass.uol para formação em machine learning para AWS.
+# Avaliação Sprint 1 - Samara Oliveira Alcantara
 
----
+    
+Para o cumprimento da avaliação foi necessário 
+utilizar um artigo base para criação de um 
+container e uma imagem em conjunto com as 
+ferramentas do Docker e os conhecimentos 
+adquiridos de Git e Github. 
 
-## Execução
-- Reproduzir e implementar o código de https://acervolima.com/docker-docker-container-para-node-js/ ;
-- Executar o código;
-- Testar o código;
-- Documentar o código e o criar um readme explicando como foi desenvolvido e relacionando com os conceitos estudados.
+## Desenvolvimento
 
-## Entrega
-- Aceitar o convite do repositório da sprint-1-pb-aws-ifce;
-  - Se não tiver o seu github crie o seu perfil e acesse a organização "Compass-pb-aws-2022-IFCE" (lembre-se de inserir seu email compass no seu perfil e seu email pessoal deve ser o principal);
-- Criar uma branch no repositório com o formato nome-sobrenome (Exemplo: daniel-muller);
-- Subir o trabalho na branch com um readme.md, documentando detalhes sobre como a avaliação foi desenvolvida e como utilizar o sistema.
-- O prazo de entrega é até às 12h do dia 05/12/2022 no repositório do github (https://github.com/Compass-pb-aws-2022-IFCE/sprint-1-pb-aws-ifce).
+No processo de desenvolvimento, um código base 
+em JavaScript foi criado, no qual as instruções
+contidas solicitam a abertuda da porta onde a 
+indicada onde a imagem será exibida.
+Seguindo os comandos indicados no artigo, é realizada
+a inicalização do projeto e criado o arquivo package.json,
+que conterá informações inseridas sobre o projeto 
+e algumas configurações.
 
----
----
+Partindo para o arquivo Dockerfile, criado para conter 
+os comandos para criação da imagem, as instruções 
+usadas foram:FROM (imagem base);
+WORKIR (determina o diretório da aplicação) e 
+COPY (identifica quais arquivos precisam ser copiador), 
+que são base para criação de imagens. Em seguida foi utilizado 
+o comando docker build -t docker-container-nodejs para 
+construir a imagem e executar o container. 
+
+
+
+## Utilização
+
+Para execução da aplicação, deve ser informado no terminal 
+o comando <docker run -d -p 8000:3000 -v address_to_app_locally:/app docker-container-nodejs>
+e visitar o endereço <localhost:8000 >, 
+a mesagem impressa será a imagem criada.
