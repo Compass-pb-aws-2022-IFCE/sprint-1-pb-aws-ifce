@@ -1,20 +1,48 @@
-# Avaliação Sprint 1 - Programa de Bolsas Compass.uol / AWS e IFCE
-Avaliação da primeira sprint do programa de bolsas Compass.uol para formação em machine learning para AWS.
+# Docker Container para Node.js
 
----
+O docker container é uma tecnologia que permite empacotar aplicativos e suas dependências, isolando-os do mundo virtual externo ao container. Criando uma imagem Node.js nesse ambiente, pode-se compartilha-la com diferentes máquinas mantendo suas configurações pré definidas para o seu funcionamento independente.
 
-## Execução
-- Reproduzir e implementar o código de https://acervolima.com/docker-docker-container-para-node-js/ ;
-- Executar o código;
-- Testar o código;
-- Documentar o código e o criar um readme explicando como foi desenvolvido e relacionando com os conceitos estudados.
+Esse código é uma reprodução do site (https://acervolima.com/docker-docker-container-para-node-js/) para reproduzi-lo foram utilizados os conceitos de docker, express - estrutura de Node.js - e o Visual Studio Code afim de realizar os seguintes objetivos: 
 
-## Entrega
-- Aceitar o convite do repositório da sprint-1-pb-aws-ifce;
-  - Se não tiver o seu github crie o seu perfil e acesse a organização "Compass-pb-aws-2022-IFCE" (lembre-se de inserir seu email compass no seu perfil e seu email pessoal deve ser o principal);
-- Criar uma branch no repositório com o formato nome-sobrenome (Exemplo: daniel-muller);
-- Subir o trabalho na branch com um readme.md, documentando detalhes sobre como a avaliação foi desenvolvida e como utilizar o sistema.
-- O prazo de entrega é até às 12h do dia 05/12/2022 no repositório do github (https://github.com/Compass-pb-aws-2022-IFCE/sprint-1-pb-aws-ifce).
+- Criação de uma imagem Node.js
+- Gerar um container com essa imagem
+- Exibição da mensagem “ Hello World! Este é o Nodejs de um contêiner docker ” no localhost
 
----
----
+## Passos
+Criar o diretório do código e mudar o diretório de trabalho atual:
+```
+mkdir express_app
+cd express_app
+```
+
+Criar um novo arquivo __app.js__ utilizando o vscode no diretório especificado anteriormente com a mesma estrutura do arquivo app.js acima.
+
+Comando para inicializar o projeto com npm e criar o package.json:
+```
+npm init
+```
+
+Instalar a bibliota da estrutura node express e em seguida a ferramenta nodemon:
+```
+npm install --save express
+npm install --save nodemon
+```
+
+Criar o arquivo __Dockerfile__ através do vscode com a mesma estrutura do arquivo Dockerfile acima.
+
+O conceito de imagem está relacionado ao que desejamos exibir no container, são camadas que têm as configurações e bibliotecas ao qual terão acesso todos aqueles que portarem o Container. Para construi-las a partir dos arquivos criados anteriormente:
+```
+docker build -t docker-container-nodejs .
+```
+
+Para verificar se a imagem foi criada:
+```
+docker images ls
+```
+
+Criando o Container a partir da imagem, definando a exibição no localhost na porta 8000.
+```
+docker run -d -p 8000:3000 -v <inserir o caminho do app.js>:/app docker-container-nodejs
+```
+
+Se tudo estiver funcionando corretamente, no navegador ao acessar __localhost:8000__ a mensagem “ Hello World! Este é o Nodejs de um contêiner docker ” será exibida.
