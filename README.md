@@ -1,20 +1,43 @@
-# Avaliação Sprint 1 - Programa de Bolsas Compass.uol / AWS e IFCE
-Avaliação da primeira sprint do programa de bolsas Compass.uol para formação em machine learning para AWS.
+AVALIÇÃO SPRINT 01
+DOCKER - DOCKER CONTAINER PARA NODE.JS
+DESCRIÇÃO
+ O projeto trata-se de uma atividade avaliativa referente a SPRINT 01 do programa de estágio da Compass OUl. Nele foi instigado que os alunos aplicassem ferramentas e conhecimentos adquiritos durante o perio  de estudos, dando enfase principalmente nos conteúdos de DOCKER e GIT, além de utilizar NODE.JS.
+  Docker é um conjunto de produtos de plataforma como serviço que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. No nosso caso foi criada uma imagem Node.JS o que permite que essa possa ser usada em várias máquinas diferentes, pois o docker garante que suas configurações serão mantidas. 
+Tecnologia
+Node.js
+Docker
+GIT
+Visual Studio
+Passo a Passo
+-Inicialmente cria-se um diretório para alocar o código localmente, utilizando o seguinte comando:
 
----
+mkdir express_app
+cd express_app
+-Utilizando o VsCode cria-se um novo arquivo app.js dentro do diretório e em seguinda inicializa-se o projeto com o seguinte comando:
 
-## Execução
-- Reproduzir e implementar o código de https://acervolima.com/docker-docker-container-para-node-js/ ;
-- Executar o código;
-- Testar o código;
-- Documentar o código e o criar um readme explicando como foi desenvolvido e relacionando com os conceitos estudados.
+npm init
+Isso adicionará o arquivo package.json, que contém informações sobre nossos projetos, como scripts, dependências e versões.
 
-## Entrega
-- Aceitar o convite do repositório da sprint-1-pb-aws-ifce;
-  - Se não tiver o seu github crie o seu perfil e acesse a organização "Compass-pb-aws-2022-IFCE" (lembre-se de inserir seu email compass no seu perfil e seu email pessoal deve ser o principal);
-- Criar uma branch no repositório com o formato nome-sobrenome (Exemplo: daniel-muller);
-- Subir o trabalho na branch com um readme.md, documentando detalhes sobre como a avaliação foi desenvolvida e como utilizar o sistema.
-- O prazo de entrega é até às 12h do dia 05/12/2022 no repositório do github (https://github.com/Compass-pb-aws-2022-IFCE/sprint-1-pb-aws-ifce).
+-É preciso instalar uma bliblioteca referente a node express e também a ferramenta nodemon. Para isso utiliza-se:
 
----
----
+npm install --save express
+npm install --save nodemon
+-Crie um Dockerfile utilizando o vsCode onde contém as informações da imagem que execurtará o aplicativo.
+
+FROM node:latest
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+CMD ["npm", "start"]
+-A partir das informações acima utiliza-se o comando a seguir para contruir a imagem que executaremos em nosso contêiner docker.
+
+docker build -t docker-container-nodejs .
+-É importante verificar se a imagem foi realmente criada e isso é feito através do comando:
+
+docker images
+-O container Docker deve ser executado usando o seguinte comando:
+
+docker run -d -p 8000:3000 -v address_to_app_locally:/app docker-container-nodejs
+Há um mapeamento de portas e no final, e ao visitar o endereço localhost: 8000deverá está exposta a seguinte mensagem:
+“Hello world! this is nodejs in a docker container…”
