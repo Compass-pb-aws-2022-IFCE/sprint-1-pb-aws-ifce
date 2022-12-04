@@ -1,4 +1,4 @@
-# Avaliação Sprint 1 - Samara Oliveira Alcantara
+# Avaliação Sprint 1
 
     
 Para o cumprimento da avaliação foi necessário 
