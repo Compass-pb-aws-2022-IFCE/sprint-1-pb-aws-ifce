@@ -87,6 +87,8 @@ docker build -t docker-container-nodejs .
 ### EXECUTANDO
 Ao executar do Docker Container com está imagem foi usado o seguinte comando no terminal:
 docker run -d -p 8000:3000 -v address_to_app_locally:/app docker-container-nodejs
+
 *OBS:* O comando acima executa um contêiner do docker. O sinalizador -p é usado para mapear a porta local 8000 para a porta 3000 do contêiner onde o aplicativo está sendo executado. O sinalizador -v é usado para montar os arquivos de aplicativo no diretório de aplicativo do contêiner. Ele também precisa do nome da imagem que será executado no contêiner, que é, neste caso, docker-container-nodejs criado anteriormente.
+
 Em seguida, visitou-se no navegador o endereço *localhost: 8000* e o aplicativo criado retornou a seguinte imagem/mensagem:
-* Olá Mundo! isso é nodejs em um contêiner docker...*
+**Olá Mundo! isso é nodejs em umcontêiner docker...**
