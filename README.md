@@ -1,20 +1,22 @@
-# Avaliação Sprint 1 - Programa de Bolsas Compass.uol / AWS e IFCE
-Avaliação da primeira sprint do programa de bolsas Compass.uol para formação em machine learning para AWS.
+# Hello World em contâiner node.js 
 
----
+Este programa tem por objetivo imprimir o clássico "Helllo World!" na tela do usuário através de node.js em um contâiner Docker.
 
-## Execução
-- Reproduzir e implementar o código de https://acervolima.com/docker-docker-container-para-node-js/ ;
-- Executar o código;
-- Testar o código;
-- Documentar o código e o criar um readme explicando como foi desenvolvido e relacionando com os conceitos estudados.
+## Como funciona
 
-## Entrega
-- Aceitar o convite do repositório da sprint-1-pb-aws-ifce;
-  - Se não tiver o seu github crie o seu perfil e acesse a organização "Compass-pb-aws-2022-IFCE" (lembre-se de inserir seu email compass no seu perfil e seu email pessoal deve ser o principal);
-- Criar uma branch no repositório com o formato nome-sobrenome (Exemplo: daniel-muller);
-- Subir o trabalho na branch com um readme.md, documentando detalhes sobre como a avaliação foi desenvolvida e como utilizar o sistema.
-- O prazo de entrega é até às 12h do dia 05/12/2022 no repositório do github (https://github.com/Compass-pb-aws-2022-IFCE/sprint-1-pb-aws-ifce).
+O programa possui, além deste README e dos módulos node, 4 arquivos: 
 
----
----
+app.js: aplicação principal em javascript, responsável por definir uma variável 'msg' que contém a mensagem que será exibida, a rota e a porta a qual será subida a aplicação (nesse caso, 3000).
+
+package.json e package-lock.json: arquivos de configuração node do app que são criados a partir dos comandos "npm init", "npm install --save express" e "npm install --save nodemon".
+
+Dockerfile: arquivo de configuração do contâiner Docker, onde definimos a imagem base (última versão do node), o diretório (/app), quais arquivos copiar do projeto para o contâiner (neste caso, copiou-se primeiro o package.json e, posteriormente, o restante dos apps com "COPY . ."), o comando npm install (que instala todas as dependências mencionadas no package.json) e os scripts que deverão ser rodados (npm e start)
+
+## Como rodar a aplicação
+
+1. Abra um terminal dentro do diretório da aplicação (caso o terminal não vá diretamente ao diretório, digite **cd express_app**) 
+2. Crie uma imagem da aplicação com o comando ' docker build -t docker-container-nodejs '. Mude o exemplo "docker-container-nodejs" para trocar o nome da imagem como preferir
+    1.1 Para visualizar se a imagem foi criada com sucesso, utilize o comando " docker images "
+3. Execute o comando _docker run -d -p 8000:3000 -v volume1:/app docker-container-nodejs_ para subir o contâiner da aplicação
+4. Em uma janela do navegador, digite ' localhost:8000 ' para acessar a aplicação
+5. Em caso de sucesso, será exibida a mensagem "Hello world! Esta é uma aplicação node.js em um container docker!" no site.
