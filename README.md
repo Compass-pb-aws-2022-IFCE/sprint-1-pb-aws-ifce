@@ -109,9 +109,13 @@ docker run -d -p 8000:3000 -v address_to_app_locally:/app docker-container-nodej
 - O sinalizador **-v** é usado para montar nossos arquivos de aplicativo no diretório de aplicativo do contêiner. Ele também precisa do nome da imagem que queremos executar em nosso contêiner (**docker-container-nodejs**).
 ## Conclusão
 - Ao executarmos todos os passos anteriores teremos a seguinte imagem e contêiner em nosso docker:
+
 ![Logo](https://uploaddeimagens.com.br/images/004/250/381/full/Captura_de_Tela_%2856%29.png?1670200114)
+
 - E ao acessarmos o **localhost:8000** em nosso navegador obtemos a seguinte resposta retornada por nosso aplicativo express:
+
 ![Logo](https://uploaddeimagens.com.br/images/004/250/319/full/Captura_de_Tela_%2854%29.png?1670196794)
+
 ## Autor
 
 - [@EdivalcoAraujo](https://github.com/EdivalcoAraujo)
