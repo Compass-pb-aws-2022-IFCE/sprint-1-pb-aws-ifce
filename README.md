@@ -8,3 +8,4 @@ Cometi um erro de comitar todo o meu esforço dentro da Branch Main, mas rapidam
 
 - Segui o passo a passo do que consta no link https://acervolima.com/docker-docker-container-para-node-js/, vez ou outra consultei os vídeos assistidos na Udemy, e também para complemnetar acessei outros consteúdos tais como: https://www.youtube.com/watch?v=n4_3_LAR4Js & https://www.macoratti.net/19/02/dock_imgfile1.htm & https://youtu.be/EKaGsShRXNY. 
 
+![image](https://user-images.githubusercontent.com/46223150/205710975-98e76f72-a0da-438a-90aa-4e1baf1c7167.png)
