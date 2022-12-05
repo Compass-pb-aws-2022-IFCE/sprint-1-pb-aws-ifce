@@ -1,9 +1,9 @@
 
 # Avaliação - Sprint 1
-Nesse projeto foi implementado o seguinte código: https://acervolima.com/docker-docker-container-para-node-js/.
+Nesse projeto foi implementado o seguinte código: https://acervolima.com/docker-docker-container-para-node-js/ para a criação de uma imagem Docker de uma aplicação simples utilizando NodeJs e Express.
 
-## Como foi feito e estrutura da aplicação
-Após criado o diretório do projeto, o seguinte comando foi utilizado para adicionar o arquivo *package.json*.
+## 1. Como foi feito e estrutura da aplicação
+Após criado o diretório do projeto através do ```mkdir```, o seguinte comando foi utilizado para adicionar o arquivo *package.json*:
 ```
 npm init
 ```
@@ -17,6 +17,27 @@ npm install --save express
 
 ```
 npm install --save nodemon
+```
+
+### package.json
+Após a instalação, apenas foi necessário adicionar um script "start" para iniciar o nodemon:
+```
+{
+  "name": "docker-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
 ```
 
 ### app.js
@@ -36,7 +57,7 @@ app.listen(port, () => {
 ```
 
 ### Dockerfile
-Aqui são adicionadas as instruções para a criação da imagem:
+Neste arquivo são adicionadas as instruções para a criação da imagem:
 ```
 FROM node:latest
 
@@ -50,9 +71,9 @@ COPY . /app
 
 CMD ["npm", "start"]
 ```
-É informado a imagem base do projeto (no caso, o Node) e o diretório que contém os arquivos. É feita a copia do *package.json* que contém as dependências necessárias e em seguida estas são instaladas. Por fim, os arquivos restantes são copiados para o diretório do projeto e é realizada a inicialização através do "npm start":
+É informada a imagem base do projeto (no caso, o Node) e o diretório que contém os arquivos. É feita a copia do *package.json* que contém as dependências necessárias e em seguida estas são instaladas. Por fim, os arquivos restantes são copiados para o diretório do projeto e é realizada a inicialização através do "npm start":
 
-## Utilização e funcionamento
+## 2. Utilização e funcionamento
 Primeiro, é necessário buildar a imagem e definir o nome através do comando:
 ```
 docker build -t {nome-da-imagem} .
@@ -63,12 +84,16 @@ docker images
 ```
 Feito isso, inicie o container com a imagem:
 ```
+docker run -d -p 8000:3000 -v {nome-do-volume}:/app {nome-da-imagem}
+
+    ou
+
 docker run -d -p 8000:3000 -v {endereço-local}:/app {nome-da-imagem}
 ```
 - A **flag -d** nos permite iniciar o container no modo *detached* , fazendo com que ele rode em background sem ocupar o terminal.
 
 - A **flag -p** define as portas utilizadas, a primeira sendo a porta que será exposta para acessar no navegador *(8000)* e a segunda sendo a porta exposta que foi definida na imagem *(3000)*.
 
-- A **flag -v** cria um volume para o container, nesse caso sendo um bind mount, definindo onde os arquivos serão armazenados.
+- A **flag -v** cria um volume para o container, definindo onde os arquivos serão armazenados. Pode-se informar apenas um nome para o volume ou indicar o caminho do diretório do projeto *(bind mount, assim os dados serão armazenados na máquina)*.
 
-Agora é só acessar [localhost:8000](http://localhost:8000) no navegador.
+Agora é só acessar [localhost:8000](http://localhost:8000) no navegador!  :)
