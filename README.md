@@ -1,4 +1,4 @@
-Repositório criado e desenvolvido para a avaliação da primeira Sprint do programa de bolsas Compass.uol  
+Repositório criado e desenvolvido para a avaliação da primeira Sprint do programa de bolsas Compass UOL
 
 Criação de container Docker com Node.js
 
