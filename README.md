@@ -3,17 +3,19 @@ Avaliação da primeira sprint do programa de bolsas Compass.uol para formação
 
 ---
 
-## Execução
-- Reproduzir e implementar o código de https://acervolima.com/docker-docker-container-para-node-js/ ;
-- Executar o código;
-- Testar o código;
-- Documentar o código e o criar um readme explicando todos os conceitos utilizados.
+## 📋 DOCUMENTAÇÃO SOBRE A AVALIAÇÃO
+ De modo geral, foram necessários utilização de conceitos muito importantes para entrega dessa avaliação dentre os aspectos mais abordados, podemos citar;
+- Implementação de noções de Git, Docker e Express do Node;
+- Comandos do terminal
+- Desenvolvimento ágil;
 
-## Entrega
-- Aceitar o convite do repositório da sprint-1-pb-aws-ifce;
-- Criar uma branch no repositório com o formato nome-sobrenome (Exemplo: daniel-muller);
-- Subir o trabalho na branch com um readme.md, documentando detalhes sobre como a avaliação foi desenvolvida e como utilizar o sistema.
-- O prazo de entrega é até às 12h do dia 05/12/2022 no repositório do github (https://github.com/Compass-pb-aws-2022-IFCE/sprint-1-pb-aws-ifce).
+A referida avaliação, enfatizou o uso de uma parte signficativa dos conceitos estudados nos cursos presentes da Sprint 1 que contou com ótimos testes de fixação. Assim como essa avaliação toda a estrutura da Sprint 1 não só resignificou alguns conhecimentos da área, mas também introduziu novos conceitos no meu apredizado.
 
 ---
+
+## ❓ Como construir um contêiner docker para node.js, e nele executar um aplicativo express.js.?
+Todos os procedimentos de forma sequeciada para utilização do sistema proposto no [Acervo Lima - Docker - Docker Container para Node.js](https://acervolima.com/docker-docker-container-para-node-js/), seguem descritos dentro da pasta [Express_APP](https://github.com/Compass-pb-aws-2022-IFCE/sprint-1-pb-aws-ifce/tree/jhonatan_goncalves_pereira/express_app).
+
+---
+### Por 🤓 [Jhonatan Gonçalves Pereira](https://github.com/jhonatangoncalvespereira)
 ---
