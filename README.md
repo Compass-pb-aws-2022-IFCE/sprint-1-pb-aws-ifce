@@ -18,10 +18,11 @@ configurações feitas e seguindo as orientações abordadas no curso de Docker,
 
 Criou-se a pasta “express_app” com o seguinte comando:
 
-mkdir express_app
-cd express_app
+**mkdir express_app
+cd express_app**
 
 Em seguida criou-se no VS Code um arquivo “app.js”, no qual contém as instruções da abertura de uma porta indicando aonde a imagem será exibida e qual mensagem ela mostrou. Como mostra a seguir:
+
 
 // import and create an express app
 const express = require('express');
@@ -38,14 +39,16 @@ app.listen(3000, () => {
     console.log("app running on port 3000...");
 })
 
+
 O próximo comando “npm init” inicializou o projeto do nó, adicionando o arquivo “package.json” contendo informações sobre projetos como scrips, dependências e versões. Ele pede o nome do pacote, a versão. Foi sendo escolhido os padrões dando ENTER.
 
 Finalizado o procedimento anterior, instalou-se a biblioteca expressa adicionando ao arquivo “package.json” como uma dependência.
-npm install --save express
+
+**npm install --save express**
 
 Na sequência foi inserido um comando no qual instala a ferramenta “nodemon” que reinicia automaticamente o aplicativo do nó quando detecta qualquer alteração.
 
-npm install --save nodemon
+**npm install --save nodemon**
 
 Foi adicionado essas dependências ao arquivo “package.json” para baixá-las quando for executado este aplicativo dentro de uma container do Docker.
 Para a execução do aplicativo com o “nodemon” foi adicionado um script no arquivo “package.json”. Como mostra a seguir:
@@ -70,7 +73,7 @@ Para a execução do aplicativo com o “nodemon” foi adicionado um script no 
 
 Para a execução do aplicativo no sistema local (terminal), foi usado o seguinte comando:
 
-npm run start
+**npm run start**
 
 Após a finalização da criação do aplicativo, deu-se inicio a criação do arquivo “Dockerfile”, onde contém todas as informações sobre a imagem que executou o aplicativo. O software docker entende esse arquivo especial e é usado para construir uma imagem.
 
@@ -92,14 +95,14 @@ EXPLICANDO O COMANDO ACIMA:
 
 Para a finalização do projeto foi usado um comando para a construção da imagem no qual foi executado no container Docker. Como mostra a segu ir:
 
-docker build -t docker-container-nodejs .
+**docker build -t docker-container-nodejs .**
 
-*OBS:* O comando usa o sinalizador -t para especificar o nome da imagem, e então terá que fornecer o endereço onde o “Dockerfile” está situado. Uma vez estando no diretório enquanto for executado os comandos, pode-se usar o ponto que representa o diretório atual.
+**OBS:** O comando usa o sinalizador -t para especificar o nome da imagem, e então terá que fornecer o endereço onde o “Dockerfile” está situado. Uma vez estando no diretório enquanto for executado os comandos, pode-se usar o ponto que representa o diretório atual.
 
-### EXECUTANDO
-Ao executar do Docker Container com está imagem foi usado o seguinte comando no terminal:
+### EXECUTANDO...
+Ao executar do Docker Container com está imagem, foi usado o seguinte comando no terminal:
 
-docker run -d -p 8000:3000 -v address_to_app_locally:/app docker-container-nodejs
+**docker run -d -p 8000:3000 -v address_to_app_locally:/app docker-container-nodejs**
 
 **OBS:** O comando usa o sinalizador -t para especificar o nome da imagem, e então terá que fornecer o endereço onde o “Dockerfile” está situado. Uma vez estando no diretório enquanto for executado os comandos, pode-se usar o ponto que representa o diretório atual.
 
