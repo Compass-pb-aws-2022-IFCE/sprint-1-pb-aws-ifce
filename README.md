@@ -16,8 +16,11 @@ Com esses arquivos, pelo terminal, abriremos um contâiner docker que puxará os
 
 ## Como rodar a aplicação
 
-1. Abra um terminal dentro do diretório da aplicação (caso o terminal não vá diretamente ao diretório, digite **cd express_app**) 
-2. Crie uma imagem da aplicação com o comando **docker build -t docker-container-nodejs**. 
-3. Execute o comando **docker run -d -p 8000:3000 -v volume1:/app docker-container-nodejs** para subir o contâiner da aplicação
-4. Em uma janela do navegador, digite **localhost:8000**  para acessar a aplicação
+1. Abra um terminal dentro do diretório da aplicação (caso o terminal não vá diretamente ao diretório, digite o comando `cd express_app`) 
+2. Crie uma imagem da aplicação com o seguinte comando:
+ `docker build -t docker-container-nodejs`. 
+(Caso queira dar outro nome a imagem, basta trocar a parte "docker-container-js" do exemplo pelo nome de sua preferência)
+3. Execute o seguinte comando para subir o contâiner da aplicação:
+`docker run -d -p 8000:3000 -v volume1:/app docker-container-nodejs`
+4. Em uma janela do navegador, digite `localhost:8000` para acessar a aplicação
 5. Em caso de sucesso, será exibida a mensagem "**Hello world! Esta é uma aplicação node.js em um container docker!**" no site.
