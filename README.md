@@ -23,53 +23,24 @@ cd express_app**
 
 Em seguida criou-se no VS Code um arquivo “app.js”, no qual contém as instruções da abertura de uma porta indicando aonde a imagem será exibida e qual mensagem ela mostrou. Como mostra a seguir:
 
-
-// import and create an express app
-const express = require('express');
-const app = express()
-  
-// message as response
-msg = "Hello world! this is nodejs in a docker container.."
-// create an end point of the api
-app.get('/', (req, res) => res.send(msg));
-  
-// now run the application and start listening
-// on port 3000
-app.listen(3000, () => {
-    console.log("app running on port 3000...");
-})
+![Captura de Tela (66)](https://user-images.githubusercontent.com/106123150/205537988-3d578105-f76e-4e1e-8e41-10df9ff6a72b.png)
 
 
 O próximo comando “npm init” inicializou o projeto do nó, adicionando o arquivo “package.json” contendo informações sobre projetos como scrips, dependências e versões. Ele pede o nome do pacote, a versão. Foi sendo escolhido os padrões dando ENTER.
 
-Finalizado o procedimento anterior, instalou-se a biblioteca expressa adicionando ao arquivo “package.json” como uma dependência.
+Finalizado o procedimento anterior, instalou-se a biblioteca expressa adicionando ao arquivo “package.json” como uma dependência. Comando a seguir:
 
 **npm install --save express**
 
 Na sequência foi inserido um comando no qual instala a ferramenta “nodemon” que reinicia automaticamente o aplicativo do nó quando detecta qualquer alteração.
+Comando a seguir:
 
 **npm install --save nodemon**
 
 Foi adicionado essas dependências ao arquivo “package.json” para baixá-las quando for executado este aplicativo dentro de uma container do Docker.
 Para a execução do aplicativo com o “nodemon” foi adicionado um script no arquivo “package.json”. Como mostra a seguir:
 
-{
-  "name": "docker-example",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.12"
-  }
-}
-
+![Captura de Tela (67)](https://user-images.githubusercontent.com/106123150/205538815-02c22287-d653-4a16-be43-28f2cb7ea2f5.png)
 
 Para a execução do aplicativo no sistema local (terminal), foi usado o seguinte comando:
 
@@ -77,12 +48,7 @@ Para a execução do aplicativo no sistema local (terminal), foi usado o seguint
 
 Após a finalização da criação do aplicativo, deu-se inicio a criação do arquivo “Dockerfile”, onde contém todas as informações sobre a imagem que executou o aplicativo. O software docker entende esse arquivo especial e é usado para construir uma imagem.
 
-**FROM node:latest
-WORKDIR /app
-COPY package.json /app
-RUN npm install
-COPY . /app
-CMD ["npm", "start"]**
+![Captura de Tela (68)](https://user-images.githubusercontent.com/106123150/205539534-1f5fbfdf-eb36-4f42-befb-3ecd02f08e75.png)
 
 EXPLICANDO O COMANDO ACIMA:
 
@@ -93,7 +59,7 @@ EXPLICANDO O COMANDO ACIMA:
 5.	Em seguida, COPY é usado para copiar o restante dos arquivos para o diretório do aplicativo no contêiner.
 6.	Por fim, fornecemos o script para executar o aplicativo . 
 
-Para a finalização do projeto foi usado um comando para a construção da imagem no qual foi executado no container Docker. Como mostra a segu ir:
+Para a finalização do projeto foi usado um comando para a construção da imagem no qual foi executado no container Docker. Como mostra a seguir:
 
 **docker build -t docker-container-nodejs .**
 
@@ -110,4 +76,4 @@ Em seguida, visitou-se no navegador o endereço *localhost: 8000* e o aplicativo
 
 **Olá Mundo! isso é nodejs em umcontêiner docker...**
 
-Concluido toda essa etapa, foi  criada uma ramificação no repositório e subiu tudo em uma branch, conforme foi orientado.
+Concluido toda essa etapa, foi criada uma ramificação no repositório (Git/GitHub) e subiu tudo em uma branch, conforme foi orientado.
