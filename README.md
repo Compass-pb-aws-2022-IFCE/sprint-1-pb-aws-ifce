@@ -9,7 +9,7 @@ npm init
 ```
 Em seguida, foram utilizados os seguintes comandos para a instalação do:
 
-- Express, que é uma biblioteca que nos ajuda a criar aplicações de forma rápida e simples.
+- Express, que é um framework que nos ajuda a desenvolver aplicações de forma mais rápida e simples com NodeJs.
 ```
 npm install --save express
 ```
