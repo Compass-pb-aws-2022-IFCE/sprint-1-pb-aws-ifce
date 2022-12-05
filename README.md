@@ -127,7 +127,7 @@ Se tudo ocorreu corretamente, ao inserir o endereço localhost: 8000, em seu nav
 "Hello world! this is nodejs in a docker container.."
 
 
-•Considerações finais
+• Considerações finais
 
 A avaliação foi executada sem muitas dificuldades, os cursos com as aulas práticas ajudaram bastante no desenvolvimento dos códigos e uso das ferramentas.
 
