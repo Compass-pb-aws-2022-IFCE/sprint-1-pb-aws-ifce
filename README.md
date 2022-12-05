@@ -77,12 +77,12 @@ Para a execução do aplicativo no sistema local (terminal), foi usado o seguint
 
 Após a finalização da criação do aplicativo, deu-se inicio a criação do arquivo “Dockerfile”, onde contém todas as informações sobre a imagem que executou o aplicativo. O software docker entende esse arquivo especial e é usado para construir uma imagem.
 
-FROM node:latest
+**FROM node:latest
 WORKDIR /app
 COPY package.json /app
 RUN npm install
 COPY . /app
-CMD ["npm", "start"]
+CMD ["npm", "start"]**
 
 EXPLICANDO O COMANDO ACIMA:
 
@@ -109,3 +109,5 @@ Ao executar do Docker Container com está imagem, foi usado o seguinte comando n
 Em seguida, visitou-se no navegador o endereço *localhost: 8000* e o aplicativo criado retornou a seguinte imagem/mensagem:
 
 **Olá Mundo! isso é nodejs em umcontêiner docker...**
+
+Concluido toda essa etapa, foi  criada uma ramificação no repositório e subiu tudo em uma branch, conforme foi orientado.
