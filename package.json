@@ -1,0 +1,25 @@
+{
+  "name": "sprint-1-pb-aws-ifce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon  app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Compass-pb-aws-2022-IFCE/sprint-1-pb-aws-ifce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Compass-pb-aws-2022-IFCE/sprint-1-pb-aws-ifce/issues"
+  },
+  "homepage": "https://github.com/Compass-pb-aws-2022-IFCE/sprint-1-pb-aws-ifce#readme"
+}
